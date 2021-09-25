@@ -9,7 +9,7 @@ import RootNavigator from "./src/navigators/RootNavigator";
 import dataReducer from "./src/store/reducer";
 
 const rootReducer = combineReducers({
-  data: dataReducer,
+  state: dataReducer,
 });
 
 const store = createStore(

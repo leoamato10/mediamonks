@@ -9,9 +9,9 @@ const initialState = {
 export default dataReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_DATA:
-      return { ...state, isLoading: true, error: "", data: action.payload };
+      return { ...state, isLoading: true, error: "" };
     case GET_DATA_SUCCESS:
-      return { ...state, isLoading: false, error: "" };
+      return { ...state, isLoading: false, error: "", data: action.payload };
     case GET_DATA_ERROR:
       return { ...state, isLoading: false, error: action.payload };
     default:
