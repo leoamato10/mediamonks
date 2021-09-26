@@ -1,5 +1,5 @@
 import React from "react";
-
+import { NativeBaseProvider } from "native-base";
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { Provider } from "react-redux";
@@ -20,9 +20,11 @@ const store = createStore(
 
 const App = () => {
   return (
-    <Provider store={store}>
-      <RootNavigator />
-    </Provider>
+    <NativeBaseProvider>
+      <Provider store={store}>
+        <RootNavigator />
+      </Provider>
+    </NativeBaseProvider>
   );
 };
 export default App;

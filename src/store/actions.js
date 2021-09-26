@@ -2,7 +2,7 @@ import { GET_DATA, GET_DATA_SUCCESS, GET_DATA_ERROR } from "./actionTypes";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const BASE_URL = "https://jsonplaceholder.typicode.com/photos?_page=1&_limit=";
-const TOTAL_DATA_RESULTS = "1";
+const TOTAL_DATA_RESULTS = "10";
 
 export const fetchData = () => {
   console.log("data fetched from API");

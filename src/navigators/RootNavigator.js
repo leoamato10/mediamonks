@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchData, setData } from "../store/actions";
 
 import Home from "../screens/Home";
+import ItemDetail from "../screens/ItemDetail";
 
 const LoginStack = createNativeStackNavigator();
 
@@ -28,19 +29,30 @@ const RootNavigator = () => {
     getData();
   }, []);
 
-  // useEffect(() => {
-  //   dispatch(fetchData());
-  // }, []);
-
   const stackNavigatorOptions = {
-    headerShown: false,
-    cardStyle: { backgroundColor: "transparent" },
+    headerTitleAlign: "center",
+    headerStyle: {
+      backgroundColor: "#000",
+    },
+    headerTintColor: "#fff",
+    headerTitleStyle: {
+      fontWeight: "bold",
+    },
   };
 
   return (
     <NavigationContainer>
-      <LoginStack.Navigator screenOptions={stackNavigatorOptions}>
-        <LoginStack.Screen name="Home" component={Home} />
+      <LoginStack.Navigator>
+        <LoginStack.Screen
+          name="HOME"
+          component={Home}
+          options={stackNavigatorOptions}
+        />
+        <LoginStack.Screen
+          name="DETAIL"
+          component={ItemDetail}
+          options={stackNavigatorOptions}
+        />
       </LoginStack.Navigator>
     </NavigationContainer>
   );
