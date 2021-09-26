@@ -44,29 +44,3 @@ export const setData = (data) => {
     }
   };
 };
-
-// export const fetchData = () => {
-//   const persistData = async (value) => {
-//     try {
-//       const jsonValue = JSON.stringify(value);
-//       await AsyncStorage.setItem("data_key", jsonValue);
-//     } catch (e) {
-//       console.log("storage error: ", e);
-//     }
-//   };
-
-//   return async (dispatch) => {
-//     try {
-//       await dispatch({ type: GET_DATA });
-//       const response = await fetch(BASE_URL + "/" + TOTAL_DATA_RESULTS);
-//       const { data } = await response.json();
-//       await persistData(data);
-//       await dispatch({ type: GET_DATA_SUCCESS, payload: token });
-//     } catch (error) {
-//       dispatch({
-//         type: GET_DATA_ERROR,
-//         payload: "Error de fetch.",
-//       });
-//     }
-//   };
-// };

@@ -10,6 +10,11 @@ import ItemDetail from "../screens/ItemDetail";
 
 const LoginStack = createNativeStackNavigator();
 
+const headerColors = {
+  background: "#000",
+  text: "#fff",
+};
+
 const RootNavigator = () => {
   const data = useSelector((state) => state.data);
   const dispatch = useDispatch();
@@ -32,9 +37,9 @@ const RootNavigator = () => {
   const stackNavigatorOptions = {
     headerTitleAlign: "center",
     headerStyle: {
-      backgroundColor: "#000",
+      backgroundColor: headerColors.background,
     },
-    headerTintColor: "#fff",
+    headerTintColor: headerColors.text,
     headerTitleStyle: {
       fontWeight: "bold",
     },

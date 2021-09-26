@@ -1,14 +1,10 @@
 import React from "react";
-import { View, Text } from "react-native";
+import ItemDetailCard from "../components/ItemDetailCard";
 
 const ItemDetail = ({ route }) => {
   const { item } = route.params;
-  console.log(item);
-  return (
-    <View>
-      <Text>{item.id}</Text>
-    </View>
-  );
+
+  return <ItemDetailCard item={item} />;
 };
 
 export default ItemDetail;
