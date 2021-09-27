@@ -11,6 +11,7 @@ import {
 } from "native-base";
 
 const ItemDetailCard = ({ item }) => {
+  const URL = item.url + ".png";
   return (
     <View
       style={{
@@ -23,7 +24,7 @@ const ItemDetailCard = ({ item }) => {
           <AspectRatio ratio={16 / 9}>
             <Image
               source={{
-                uri: "https://www.holidify.com/images/cmsuploads/compressed/Bangalore_citycover_20190613234056.jpg",
+                uri: URL,
               }}
               alt="image"
             />

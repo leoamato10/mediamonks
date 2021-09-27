@@ -9,7 +9,9 @@ import {
   Heading,
 } from "native-base";
 
-const AlbumCard = ({ item, URL, navigation }) => {
+const AlbumCard = ({ item, navigation }) => {
+  const URL = item.url + ".png";
+
   return (
     <Pressable
       onPress={() => {
@@ -35,7 +37,7 @@ const AlbumCard = ({ item, URL, navigation }) => {
               <AspectRatio ratio={16 / 9}>
                 <Image
                   source={{
-                    uri: "https://www.holidify.com/images/cmsuploads/compressed/Bangalore_citycover_20190613234056.jpg",
+                    uri: URL,
                   }}
                   alt="image"
                 />

@@ -1,4 +1,5 @@
 import React from "react";
+import { LogBox } from "react-native";
 import { NativeBaseProvider } from "native-base";
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
@@ -19,6 +20,8 @@ const store = createStore(
 );
 
 const App = () => {
+  LogBox.ignoreLogs(["Warning: forwardRef"]);
+
   return (
     <NativeBaseProvider>
       <Provider store={store}>

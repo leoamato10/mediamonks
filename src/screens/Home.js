@@ -11,14 +11,18 @@ const Home = ({ navigation }) => {
   const state = useSelector((state) => state.state);
   const toast = useToast();
 
+  const showToast = () => {
+    toast.show({
+      title: "Success",
+      status: "success",
+      description: "Storage data was successfully deleted.",
+    });
+  };
+
   const clearFetchedData = async () => {
     try {
       await AsyncStorage.clear();
-      toast.show({
-        title: "Success",
-        status: "success",
-        description: "Storage data was successfully deleted.",
-      });
+      showToast();
     } catch (e) {
       console.log(e);
     }
@@ -33,14 +37,13 @@ const Home = ({ navigation }) => {
         <FlatList
           data={state.data}
           keyExtractor={(item) => item.id.toString()}
-          renderItem={({ item }) => {
-            const URL = item.url.toString() + ".jpg";
-            return <AlbumCard item={item} URL={URL} navigation={navigation} />;
-          }}
+          renderItem={({ item }) => (
+            <AlbumCard item={item} navigation={navigation} />
+          )}
         />
       )}
       <View style={{ padding: 10 }}>
-        <Button onPress={() => clearFetchedData()}>Clear fetched data</Button>
+        <Button onPress={() => clearFetchedData()}>Clear storage data</Button>
       </View>
     </View>
   );
